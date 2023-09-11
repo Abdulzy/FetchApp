@@ -64,9 +64,10 @@ public class FetchJsonAsyncTask extends AsyncTask<Void, Void, List<Item>> {
             JSONArray jsonArray = new JSONArray(jsonData);
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                int listId = jsonObject.optInt("listId", -1);
-                String name = jsonObject.optString("name", null);
-                if (listId != -1 && name != null) {
+                int listId = jsonObject.optInt("listId",-1);
+                String name = jsonObject.optString("name",null);
+                if (listId != -1 && name != null && !name.equals("null") && !name.trim().isEmpty() ) {
+                    System.out.println(true);
                     itemList.add(new Item(listId, name));
                 }
             }

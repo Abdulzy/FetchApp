@@ -28,23 +28,28 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     @NonNull
     @Override
     public ItemAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(context).inflate(R.layout.activity_item, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ItemAdapter.ViewHolder holder, int position) {
-
+        Item item = itemList.get(position);
+        holder.nameTextView.setText(item.getName());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return itemList.size();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
+        TextView nameTextView;
+
         ViewHolder(View itemView) {
             super(itemView);
+            nameTextView = itemView.findViewById(R.id.nameTextView);
         }
     }
     
