@@ -2,10 +2,12 @@ package Interview.fetchApp;
 
 public class Item {
     private int listId;
+    private int id;
     private String name;
 
-    public Item(int listId, String name) {
+    public Item(int listId,int id, String name) {
         this.listId = listId;
+        this.id = id;
         this.name = name;
     }
 
@@ -15,5 +17,9 @@ public class Item {
 
     public String getName() {
         return name;
+    }
+
+    public int getId() {
+        return id;
     }
 }
