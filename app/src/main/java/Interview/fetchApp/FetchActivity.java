@@ -17,6 +17,9 @@ import java.util.List;
 
 import Interview.fetchApp.databinding.ActivityFetchBinding;
 
+/**
+ * Fetch activity responsible for displaying the list of items retrieved from a JSON URL.
+ */
 public class FetchActivity extends AppCompatActivity implements FetchJsonAsyncTask.DataFetchedListener{
     private RecyclerView recyclerView;
     private ItemAdapter adapter;
