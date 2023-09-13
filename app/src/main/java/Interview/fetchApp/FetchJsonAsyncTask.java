@@ -15,10 +15,19 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * AsyncTask for making an HTTP GET request and fetching data from a JSON URL.
+ */
 public class FetchJsonAsyncTask extends AsyncTask<Void, Void, List<Item>> {
     private final String jsonUrl;
     private final DataFetchedListener listener;
 
+    /**
+     * Constructs a FetchJsonAsyncTask.
+     *
+     * @param jsonUrl  The URL of the JSON data.
+     * @param listener The listener for data fetched events.
+     */
     public FetchJsonAsyncTask(String jsonUrl, DataFetchedListener listener) {
         this.jsonUrl = jsonUrl;
         this.listener = listener;
@@ -58,6 +67,10 @@ public class FetchJsonAsyncTask extends AsyncTask<Void, Void, List<Item>> {
         }
     }
 
+    /**
+     * @param jsonData data that was read from JSON link
+     * @return List of all items in json
+     */
     private List<Item> parseJsonData(String jsonData) {
         List<Item> itemList = new ArrayList<>();
         try {
@@ -77,7 +90,15 @@ public class FetchJsonAsyncTask extends AsyncTask<Void, Void, List<Item>> {
         return itemList;
     }
 
+    /**
+     * Listener interface for data fetched events.
+     */
     public interface DataFetchedListener {
+        /**
+         * Called when data has been fetched and processed.
+         *
+         * @param itemList The list of fetched items.
+         */
         void onDataFetched(List<Item> itemList);
     }
 }

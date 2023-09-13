@@ -1,6 +1,5 @@
 package Interview.fetchApp;
 
-import android.content.ClipData;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +13,20 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Adapter for binding data to the RecyclerView and filtering/sorting the data.
+ */
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     private Context context;
     private List<Item> itemList;
 
+    /**
+     * Constructs an ItemAdapter.
+     *
+     * @param context  The context of the application.
+     * @param itemList The list of items to be displayed.
+     */
     public ItemAdapter(Context context, List<Item> itemList) {
         this.context = context;
         this.itemList = itemList;
@@ -56,7 +64,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             listIdTextView = itemView.findViewById(R.id.listId);
         }
     }
-    
+
+    /**
+     * Filters out items with blank or null names and sorts the data.
+     */
     private void filterAndSortData() {
         // Filter out items with blank or null names
         itemList.removeIf(item -> item.getName() == null || item.getName().trim().isEmpty());
