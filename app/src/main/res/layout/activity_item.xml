@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_margin="5dp"
     app:cardCornerRadius="5dp"
-    app:cardElevation="3dp">
+    app:cardElevation="5dp">
 
 
     <RelativeLayout
@@ -31,10 +31,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="17dp"
             android:layout_toEndOf="@+id/listId"
             android:text="name"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
