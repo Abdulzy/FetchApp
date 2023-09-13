@@ -11,7 +11,7 @@ This Android app fetches data from a JSON URL and displays the data grouped by "
 
 ## Installation
 
-1. Clone this repository: `git clone https://github.com/yourusername/your-repo.git`
+1. Clone this repository: `git clone https://github.com/abdulzy/FetchApp.git`
 2. Open the project in Android Studio.
 3. Build and run the app on an Android emulator or device.
 
@@ -22,4 +22,4 @@ This Android app fetches data from a JSON URL and displays the data grouped by "
 3. The data will be displayed in a list, grouped by "listId" and sorted by "name."
 
 ## Citation
-Image on the app is from RaftelDesign 
+The image on the app is from RaftelDesign 
